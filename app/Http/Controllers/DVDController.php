@@ -21,6 +21,7 @@ class DVDController extends Controller
      */
     public function create()
     {
+        // need to add the all for format, type, genre, and location
         // $ = ::all();
         // return view('DVDs.create', compact(''));
     }
@@ -71,6 +72,7 @@ class DVDController extends Controller
     public function edit(string $id)
     {
         $dvd = DVD::findOrFail($id);
+        // need to add the all for format, type, genre, and location
         // $ = ::all();
         // return view('DVDs.edit', compact('dvd', ''));
     }

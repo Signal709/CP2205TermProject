@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header">Name: {{ $dvd->name }}</div>
                     <div class="card-body">
-                        <div class="object-fit h-30 w-15">
+                        <div>
                             <img src="{{ $dvd->image_url }}" />
                         </div>
                         <p>Rating: {{ $dvd->rating }}</p>

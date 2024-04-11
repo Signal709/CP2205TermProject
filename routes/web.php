@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+// ---- Admin Routes ----
+
 // ---- DVD Routes ----
 Route::get('/DVDs', [DVDController::class, 'index'])->name('DVDs.index');
 Route::get('/DVDs/{id}', [DVDController::class, 'show'])->name('DVDs.show');
@@ -28,33 +30,33 @@ Route::get('/DVDs/{id}/edit', [DVDController::class, 'edit'])->name('DVDs.edit')
 Route::put('/DVDs/{id}', [DVDController::class, 'update'])->name('DVDs.update');
 
 // ---- Format Routes ----
-Route::get()->name();
-Route::get()->name();
-Route::post()->name();
-Route::get()->name();
-Route::get()->name();
-Route::put()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::post()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::put()->name();
 
 // ---- Genre Routes ----
-Route::get()->name();
-Route::get()->name();
-Route::post()->name();
-Route::get()->name();
-Route::get()->name();
-Route::put()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::post()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::put()->name();
 
 // ---- Location Routes ----
-Route::get()->name();
-Route::get()->name();
-Route::post()->name();
-Route::get()->name();
-Route::get()->name();
-Route::put()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::post()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::put()->name();
 
 // ---- Type Routes ----
-Route::get()->name();
-Route::get()->name();
-Route::post()->name();
-Route::get()->name();
-Route::get()->name();
-Route::put()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::post()->name();
+// Route::get()->name();
+// Route::get()->name();
+// Route::put()->name();
