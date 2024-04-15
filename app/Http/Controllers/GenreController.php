@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -11,7 +12,8 @@ class GenreController extends Controller
      */
     public function index()
     {
-        //
+        $genre = Genre::all();
+        return view('Genre.index', compact('genre'));
     }
 
     /**
@@ -19,7 +21,7 @@ class GenreController extends Controller
      */
     public function create()
     {
-        //
+        // TODO
     }
 
     /**
@@ -27,7 +29,14 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'genre' => 'required'
+        ]);
+
+        $genre = new Genre;
+        $genre->genre = $request->genre;
+        $genre->save();
+        return redirect()->route('Genre.index')->with('success', 'Genre has been created successfully');
     }
 
     /**
@@ -35,7 +44,8 @@ class GenreController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $genre = Genre::findorFail($id);
+        return view('Genre.show', compact('genre'));
     }
 
     /**
@@ -43,7 +53,7 @@ class GenreController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // TODO
     }
 
     /**
@@ -51,7 +61,14 @@ class GenreController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'genre' => 'required'
+        ]);
+
+        $genre = Genre::findOrFail($id);
+        $genre->genre = $request->genre;
+        $genre->save();
+        return redirect()->route('Genre.index')->with('success', 'Genre has been updated successfully');
     }
 
     /**
@@ -59,6 +76,6 @@ class GenreController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // TODO
     }
 }

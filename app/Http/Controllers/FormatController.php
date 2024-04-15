@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Format;
 use Illuminate\Http\Request;
 
 class FormatController extends Controller
@@ -11,7 +12,8 @@ class FormatController extends Controller
      */
     public function index()
     {
-        //
+        $format = Format::all();
+        return view('Format.index', compact('format'));
     }
 
     /**
@@ -19,7 +21,7 @@ class FormatController extends Controller
      */
     public function create()
     {
-        //
+        // TODO
     }
 
     /**
@@ -27,7 +29,14 @@ class FormatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'format' => 'required'
+        ]);
+
+        $format = new Format;
+        $format->format = $request->format;
+        $format->save();
+        return redirect()->route('Format.index')->with('success', 'Format has been created successfully');
     }
 
     /**
@@ -35,7 +44,8 @@ class FormatController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $format = Format::findorFail($id);
+        return view('Format.show', compact('format'));
     }
 
     /**
@@ -43,7 +53,7 @@ class FormatController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // TODO
     }
 
     /**
@@ -51,7 +61,14 @@ class FormatController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'format' => 'required'
+        ]);
+
+        $format = Format::findOrFail($id);
+        $format->format = $request->format;
+        $format->save();
+        return redirect()->route('Format.index')->with('success', 'Format has been updated successfully');
     }
 
     /**
@@ -59,6 +76,6 @@ class FormatController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // TODO
     }
 }

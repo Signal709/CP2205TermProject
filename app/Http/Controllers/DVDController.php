@@ -12,7 +12,7 @@ class DVDController extends Controller
      */
     public function index()
     {
-        $dvds = DVD::all();
+        $dvd = DVD::all();
         return view('DVDs.index', compact('dvds'));
     }
 
@@ -21,7 +21,7 @@ class DVDController extends Controller
      */
     public function create()
     {
-        // need to add the all for format, type, genre, and location
+        // TODO need to add the all for format, type, genre, and location
         // $ = ::all();
         // return view('DVDs.create', compact(''));
     }
@@ -63,7 +63,7 @@ class DVDController extends Controller
     public function show(string $id)
     {
         $dvd = DVD::findorFail($id);
-        return view('DVDs.show', compact('dvd'));
+        return view('DVDs.show', compact('dvds'));
     }
 
     /**
@@ -72,7 +72,7 @@ class DVDController extends Controller
     public function edit(string $id)
     {
         $dvd = DVD::findOrFail($id);
-        // need to add the all for format, type, genre, and location
+        // TODO need to add the all for format, type, genre, and location
         // $ = ::all();
         // return view('DVDs.edit', compact('dvd', ''));
     }
@@ -113,6 +113,6 @@ class DVDController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // TODO
     }
 }
