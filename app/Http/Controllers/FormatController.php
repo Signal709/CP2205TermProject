@@ -12,8 +12,8 @@ class FormatController extends Controller
      */
     public function index()
     {
-        $format = Format::all();
-        return view('Format.index', compact('format'));
+        $formats = Format::all();
+        return view('Format.index', compact('formats'));
     }
 
     /**

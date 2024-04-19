@@ -6,7 +6,14 @@
         <h3>DVDs</h3>
         <div>
             <a href="{{ route('welcome') }}" class="btn btn-secondary">Home</a>
-            {{-- <a href="#" class="btn btn-secondary">Add Book</a> --}}
+            <a href="{{ route('DVDs.create') }}" class="btn btn-secondary">Add DVD</a>
+            <a href="{{ route('Format.index') }}" class="btn btn-secondary">View Formats</a>
+            <a href="{{ route('Genre.index') }}" class="btn btn-secondary">View Genres</a>
+            <a href="{{ route('Type.index') }}" class="btn btn-secondary">View Types</a>
+            <a href="{{ route('Location.index') }}" class="btn btn-secondary">View Locations</a>
+        </div>
+        <div>
+
         </div>
 
     </div>

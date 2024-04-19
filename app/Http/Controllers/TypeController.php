@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller
@@ -11,7 +12,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        return view('Type.index', compact('types'));
     }
 
     /**
@@ -19,7 +21,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        // TO DO
     }
 
     /**
@@ -27,7 +29,14 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'type' => 'required'
+        ]);
+
+        $type = new Type();
+        $type->type = $request->type;
+        $type->save();
+        return redirect()->route('Type.index')->with('success', 'Type has been created successfully');
     }
 
     /**
@@ -35,7 +44,8 @@ class TypeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $type = Type::findorFail($id);
+        return view('Type.show', compact('type'));
     }
 
     /**
@@ -43,7 +53,7 @@ class TypeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // TO DO
     }
 
     /**
@@ -51,7 +61,14 @@ class TypeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'type' => 'required'
+        ]);
+
+        $type = Type::findOrFail($id);
+        $type->type = $request->type;
+        $type->save();
+        return redirect()->route('Type.index')->with('success', 'Type has been updated successfully');
     }
 
     /**
@@ -59,6 +76,6 @@ class TypeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // TO DO
     }
 }

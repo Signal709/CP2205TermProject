@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\DVD;
+use App\Models\Format;
+use App\Models\Genre;
+use App\Models\Location;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class DVDController extends Controller
@@ -12,7 +16,7 @@ class DVDController extends Controller
      */
     public function index()
     {
-        $dvd = DVD::all();
+        $dvds = DVD::all();
         return view('DVDs.index', compact('dvds'));
     }
 
@@ -21,9 +25,13 @@ class DVDController extends Controller
      */
     public function create()
     {
-        // TODO need to add the all for format, type, genre, and location
-        // $ = ::all();
-        // return view('DVDs.create', compact(''));
+        $dvds = DVD::all();
+        $formats = Format::all();
+        $types = Type::all();
+        $locations = Location::all();
+        $genres = Genre::all();
+
+        return view('DVDs.create', compact('dvds', 'formats', 'types', 'locations', 'genres'));
     }
 
     /**
@@ -63,7 +71,7 @@ class DVDController extends Controller
     public function show(string $id)
     {
         $dvd = DVD::findorFail($id);
-        return view('DVDs.show', compact('dvds'));
+        return view('DVDs.show', compact('dvd'));
     }
 
     /**
@@ -73,8 +81,10 @@ class DVDController extends Controller
     {
         $dvd = DVD::findOrFail($id);
         // TODO need to add the all for format, type, genre, and location
-        // $ = ::all();
-        // return view('DVDs.edit', compact('dvd', ''));
+        $formats = Format::all();
+        $types = Type::all();
+        $locations = Location::all();
+        return view('DVDs.edit', compact('dvd', 'formats', 'types', 'locations'));
     }
 
     /**
