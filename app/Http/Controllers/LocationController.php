@@ -21,7 +21,8 @@ class LocationController extends Controller
      */
     public function create()
     {
-        // TODO
+        $locations = Location::all();
+        return view('Location.create', compact('locations'));
     }
 
     /**

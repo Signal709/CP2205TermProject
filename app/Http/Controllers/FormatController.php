@@ -21,7 +21,8 @@ class FormatController extends Controller
      */
     public function create()
     {
-        // TODO
+        $formats = Format::all();
+        return view('Format.create', compact('formats'));
     }
 
     /**
@@ -34,7 +35,9 @@ class FormatController extends Controller
         ]);
 
         $format = new Format;
-        $format->format = $request->format;
+        $format->format_name = $request->format;
+        $format->slug = $request->format;
+        // dd($request);
         $format->save();
         return redirect()->route('Format.index')->with('success', 'Format has been created successfully');
     }

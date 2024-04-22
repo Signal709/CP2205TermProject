@@ -21,7 +21,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        // TO DO
+        $types = Type::all();
+        return view('Type.create');
     }
 
     /**

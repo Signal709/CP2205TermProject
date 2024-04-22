@@ -123,6 +123,9 @@ class DVDController extends Controller
      */
     public function destroy(string $id)
     {
-        // TODO
+        $dvd = DVD::findOrFail($id);
+        $dvd->delete();
+
+        return redirect()->route('DVDs.index')->with('success', 'DVD has been deleted successfully');
     }
 }

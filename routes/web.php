@@ -32,12 +32,13 @@ Route::get('/DVDs/{id}', [DVDController::class, 'show'])->name('DVDs.show');
 Route::post('/DVDs', [DVDController::class, 'store'])->name('DVDs.store');
 Route::get('/DVDs/{id}/edit', [DVDController::class, 'edit'])->name('DVDs.edit');
 Route::put('/DVDs/{id}', [DVDController::class, 'update'])->name('DVDs.update');
+Route::delete('/DVDs/{id}', [DVDController::class, 'destroy'])->name('DVDs.destroy');
 
 // ---- Format Routes ----
 Route::get('/Format', [FormatController::class, 'index'])->name('Format.index');
+Route::get('/Format/create', [FormatController::class, 'create'])->name('Format.create');
 Route::get('/Format/{id}', [FormatController::class, 'show'])->name('Format.show');
 Route::post('/Format', [FormatController::class, 'store'])->name('Format.store');
-Route::get('/Format/create', [FormatController::class, 'create'])->name('Format.create');
 Route::get('/Format/{id}/edit', [FormatController::class, 'edit'])->name('Format.edit');
 Route::put('/Format/{id}', [FormatController::class, 'update'])->name('Format.update');
 

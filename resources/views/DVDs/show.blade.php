@@ -17,14 +17,15 @@
             {{-- <p>Number of Episodes: {{ $dvd->}}</p> --}}
             <p>Created at: {{ $dvd->created_at->format('Y-m-d H:i:s') }}</p>
             <p>Updated at: {{ $dvd->updated_at->format('Y-m-d H:i:s') }}</p>
+            {{-- @dd($dvd) --}}
             <div class="card-footer">
                 <a href="{{ route('DVDs.edit', $dvd->id) }}" class="btn btn-warning">Edit</a>
-                <a href="{{ route('DVDs.index') }}" class="btn btn-secondary">Back</a>
-                {{-- <form action="{{ route('posts.destroy', $post->id) }}" method="post" class="d-inline">
+                <form action="{{ route('DVDs.destroy', $dvd->id) }}" method="post" class="d-inline">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-danger">Delete</button>
-                </form> --}}
+                </form>
+                <a href="{{ route('DVDs.index') }}" class="btn btn-secondary">Back</a>
             </div>
             
         </div>
