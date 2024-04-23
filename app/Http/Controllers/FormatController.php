@@ -12,7 +12,7 @@ class FormatController extends Controller
      */
     public function index()
     {
-        $formats = Format::all();
+        $formats = Format::paginate(4);
         return view('Format.index', compact('formats'));
     }
 

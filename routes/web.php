@@ -41,27 +41,31 @@ Route::get('/Format/{id}', [FormatController::class, 'show'])->name('Format.show
 Route::post('/Format', [FormatController::class, 'store'])->name('Format.store');
 Route::get('/Format/{id}/edit', [FormatController::class, 'edit'])->name('Format.edit');
 Route::put('/Format/{id}', [FormatController::class, 'update'])->name('Format.update');
+Route::delete('/Format/{id}', [FormatController::class, 'destroy'])->name('Format.destroy');
 
 // ---- Genre Routes ----
 Route::get('/Genre', [GenreController::class, 'index'])->name('Genre.index');
+Route::get('/Genre/create', [GenreController::class, 'create'])->name('Genre.create');
 Route::get('/Genre/{id}', [GenreController::class, 'show'])->name('Genre.show');
 Route::post('/Genre', [GenreController::class, 'store'])->name('Genre.store');
-Route::get('/Genre/create', [GenreController::class, 'create'])->name('Genre.create');
 Route::get('/Genre/{id}/edit', [GenreController::class, 'edit'])->name('Genre.edit');
 Route::put('/Genre/{id}', [GenreController::class, 'update'])->name('Genre.update');
+Route::delete('/Genre/{id}', [GenreController::class, 'destroy'])->name('Genre.destroy');
 
 // ---- Location Routes ----
 Route::get('/Location', [LocationController::class, 'index'])->name('Location.index');
+Route::get('/Location/create', [LocationController::class, 'create'])->name('Location.create');
 Route::get('/Location/{id}', [LocationController::class, 'show'])->name('Location.show');
 Route::post('/Location', [LocationController::class, 'store'])->name('Location.store');
-Route::get('/Location/create', [LocationController::class, 'create'])->name('Location.create');
 Route::get('/Location/{id}/edit', [LocationController::class, 'edit'])->name('Location.edit');
 Route::put('/Location/{id}', [LocationController::class, 'update'])->name('Location.update');
+Route::delete('/Location/{id}', [LocationController::class, 'destroy'])->name('Location.destroy');
 
 // ---- Type Routes ----
 Route::get('/Type', [TypeController::class, 'index'])->name('Type.index');
+Route::get('/Type/create', [TypeController::class, 'create'])->name('Type.create');
 Route::get('/Type/{id}', [TypeController::class, 'show'])->name('Type.show');
 Route::post('/Type', [TypeController::class, 'store'])->name('Type.store');
-Route::get('/Type/create', [TypeController::class, 'create'])->name('Type.create');
 Route::get('/Type/{id}/edit', [TypeController::class, 'edit'])->name('Type.edit');
 Route::put('/Type/{id}', [TypeController::class, 'update'])->name('Type.update');
+Route::delete('/Type/{id}', [TypeController::class, 'destroy'])->name('Type.destroy');

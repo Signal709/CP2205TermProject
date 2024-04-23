@@ -16,7 +16,7 @@ class DVDController extends Controller
      */
     public function index()
     {
-        $dvds = DVD::all();
+        $dvds = DVD::paginate(4);
         return view('DVDs.index', compact('dvds'));
     }
 

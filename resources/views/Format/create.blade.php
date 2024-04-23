@@ -13,7 +13,7 @@
                 <div class="form-group">
                     <label for="format">Format Name:</label>
                     <input type="text" name="format" id="format"
-                        class="form-control @error('name') is-invalid @enderror"
+                        class="form-control @error('format') is-invalid @enderror"
                         value="{{ old('format') }}">
                     @error('format')
                         <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
-                <a href="{{ route('DVDs.index') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ route('Format.index') }}" class="btn btn-secondary">Back</a>
             </form>
         </div>
     </div>

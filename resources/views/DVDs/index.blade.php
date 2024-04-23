@@ -40,4 +40,7 @@
             </div>
         @endforeach
     </div>
+    <div>
+        {{ $dvds->links('pagination::bootstrap-5') }}
+    </div>
 @endsection

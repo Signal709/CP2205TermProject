@@ -14,8 +14,6 @@
                 <div class="card">
                     <div class="card-header"><h6>Name:</h6> {{ $genre->genre_name }}</div>
                     <div class="card-body">
-                        {{-- <h5>Bio:</h5>
-                        <p>{{ $author->bio }}</p> --}}
                     </div>
                     <div class="card-footer">
                         <a href="{{ route('Genre.show', $genre->id) }}" class="btn btn-primary">View</a>
@@ -29,5 +27,8 @@
                 </div>
             </div>
         @endforeach
+    </div>
+    <div>
+        {{ $genres->links('pagination::bootstrap-5') }}
     </div>
 @endsection

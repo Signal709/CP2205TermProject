@@ -14,8 +14,6 @@
                 <div class="card">
                     <div class="card-header"><h6>Name:</h6> {{ $type->type_name }}</div>
                     <div class="card-body">
-                        {{-- <h5>Bio:</h5>
-                        <p>{{ $author->bio }}</p> --}}
                     </div>
                     <div class="card-footer">
                         <a href="{{ route('Type.show', $type->id) }}" class="btn btn-primary">View</a>
@@ -29,5 +27,8 @@
                 </div>
             </div>
         @endforeach
+    </div>
+    <div>
+        {{ $types->links('pagination::bootstrap-5') }}
     </div>
 @endsection
